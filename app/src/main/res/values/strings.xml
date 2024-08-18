@@ -3,5 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="myFirstTextView">hello</string>
+    <string name="myFirstTextView">动态变换fragment</string>
+    <string name="yellow_string">这是黄色fragment</string>
+    <string name="red_string">这是红色fragment</string>
 </resources>
