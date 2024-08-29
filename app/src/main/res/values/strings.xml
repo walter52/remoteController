@@ -6,4 +6,5 @@
     <string name="myFirstTextView">动态变换fragment</string>
     <string name="yellow_string">这是黄色fragment</string>
     <string name="red_string">这是红色fragment</string>
+    <string name="hello">Hello</string>
 </resources>

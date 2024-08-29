@@ -1,17 +1,13 @@
 package com.walter.remotecontroller;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.walter.remotecontroller.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
@@ -24,26 +20,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Button btn1 = findViewById(R.id.btn1);
-        btn1.setOnClickListener(this);
-        Button btn2 = findViewById(R.id.btn2);
-        btn2.setOnClickListener(this);
+        ViewPager2 viewPager = findViewById(R.id.viewPager);
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter();
+        viewPager.setAdapter(viewPagerAdapter);
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.btn1) {
-            replaceColour(new BlankFragmentYellow());
-        } else if (v.getId() == R.id.btn2) {
-            replaceColour(new BlankFragmentRed());
-        }
-
-    }
-
-    private void replaceColour(Fragment fragment) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frag_default, fragment);
-        fragmentTransaction.commit();
-    }
 }
