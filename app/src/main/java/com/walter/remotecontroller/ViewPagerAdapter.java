@@ -14,6 +14,7 @@ import java.util.List;
 public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.ViewPagerViewHolder> {
 
     private final static List<String> CLASSIFICATION = List.of("首页", "第二页", "第三页", "第四页");
+    private final static List<Integer> COLOUR = List.of(R.color.white, R.color.black, R.color.blue, R.color.teal_200);
 
     @NonNull
     @Override
@@ -24,6 +25,7 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewPagerViewHolder holder, int position) {
         holder.mTv.setText(CLASSIFICATION.get(position));
+        holder.mContainer.setBackgroundResource(COLOUR.get(position));
     }
 
     @Override
